@@ -14,5 +14,5 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_karate.mk \
-    $(LOCAL_DIR)/full_karate.mk
+    $(LOCAL_DIR)/omni_karatep.mk \
+    $(LOCAL_DIR)/full_karatep.mk

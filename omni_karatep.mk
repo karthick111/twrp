@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-$(call inherit-product, device/lenovo/karate/full_karate.mk)
+$(call inherit-product, device/lenovo/karatep/full_karatep.mk)
 
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
@@ -29,12 +29,12 @@ TARGET_BOOTANIMATION_SIZE := 1080x608
 $(call inherit-product, vendor/omni/config/common.mk)
 
 # Set those variables here to overwrite the inherited values.
-PRODUCT_NAME := omni_karate
+PRODUCT_NAME := omni_karatep
 BOARD_VENDOR := lenovo
-PRODUCT_DEVICE := karate
+PRODUCT_DEVICE := karatep
 PRODUCT_MANUFACTURER := LENOVO
 
-TARGET_VENDOR_PRODUCT_NAME := karate
+TARGET_VENDOR_PRODUCT_NAME := karatep
 
 # Overlays (inherit after vendor/omni to ensure we override it)
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -44,6 +44,6 @@ PRODUCT_GMS_CLIENTID_BASE := android-lenovo
 ## Use the latest approved GMS identifiers unless running a signed build
 ifneq ($(SIGN_BUILD),true)
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_FINGERPRINT=Lenovo/karate/K33:7.0/NRD90N/K33_S223_170610_ROW:user/release-keys \
+    BUILD_FINGERPRINT=Lenovo/karatep/K53a48:7.0/NRD90N/K53_S218_170605_ROW:user/release-keys \
     PRIVATE_BUILD_DESC="karate-user 7.0 NRD90N K33_S223_170610_ROW release-keys"
 endif

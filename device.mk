@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/lenovo/karate
+LOCAL_PATH := device/lenovo/karatep
 
 # Include device-specific product fragments
 include $(LOCAL_PATH)/product/*.mk

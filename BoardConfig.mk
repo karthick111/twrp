@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/lenovo/karate
+LOCAL_PATH := device/lenovo/karatep
 
 # Inherit device-specific board fragments
 include $(LOCAL_PATH)/board/*.mk

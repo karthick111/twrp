@@ -17,12 +17,14 @@
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Inherit from karatep device
 $(call inherit-product, device/lenovo/karatep/device.mk)
 
 # Device identifier. This must come after all inclusions
+PRODUCT_BRAND := Lenovo
 PRODUCT_DEVICE := karatep
 PRODUCT_NAME := full_karatep
-PRODUCT_MODEL := Lenovo K53
+PRODUCT_MODEL := K53
 PRODUCT_MANUFACTURER := LENOVO

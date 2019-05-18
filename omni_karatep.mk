@@ -16,9 +16,6 @@
 
 $(call inherit-product, device/lenovo/karatep/full_karatep.mk)
 
-# Specify phone tech before including full_phone
-$(call inherit-product, vendor/omni/config/gsm.mk)
-
 # Inherit some common Omni stuff.
 $(call inherit-product, vendor/omni/config/common.mk)
 

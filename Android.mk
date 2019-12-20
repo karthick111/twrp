@@ -401,6 +401,9 @@ endif
 ifeq ($(TW_EXCLUDE_TWRPAPP),true)
     LOCAL_CFLAGS += -DTW_EXCLUDE_TWRPAPP
 endif
+ifeq ($(TW_USE_SYSTEM_FINGERPRINT),true)
+    LOCAL_CFLAGS += -DTW_USE_SYSTEM_FINGERPRINT
+endif
 
 TWRP_REQUIRED_MODULES += \
     dump_image \

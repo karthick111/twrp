@@ -53,6 +53,8 @@ extern "C" {
 #include "minadbd21/adb.h"
 }
 #endif
+#include <fstream>
+#include <sys/stat.h>
 
 //extern int adb_server_main(int is_daemon, int server_port, int /* reply_fd */);
 
@@ -128,6 +130,32 @@ int main(int argc, char **argv) {
 
 	bool Shutdown = false;
 	bool SkipDecryption = false;
+#ifdef TW_USE_SYSTEM_FINGERPRINT
+    std::string mount = "mount -r /vendor";
+    std::string umount = "umount -f /vendor";
+    TWFunc::Exec_Cmd(mount);
+    if (TWFunc::Path_Exists("/vendor") == false)
+        {
+            mkdir("/vendor", 0755); 
+        }
+    const char* path = "/vendor/build.prop";
+    std::ifstream infile(path);
+    std::string line;
+    while (std::getline(infile, line))
+    {
+        if (line.find("ro.vendor.build.fingerprint") != std::string::npos)
+        {
+            if (!TWFunc::Path_Exists("/sbin/resetprop")) {            
+				LOGERR("Unable to find /sbin/resetprop binary");
+                break;
+            }
+            TWFunc::Exec_Cmd("resetprop ro.build.fingerprint " + line.substr(28, line.length() -1));
+            break;
+        }
+    }
+    infile.close();
+    TWFunc::Exec_Cmd(umount);
+#endif
 	string Send_Intent = "";
 	{
 		TWPartition* misc = PartitionManager.Find_Partition_By_Path("/misc");

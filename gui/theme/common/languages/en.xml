@@ -721,5 +721,8 @@
 		<string name="unable_set_boot_slot">Error changing bootloader boot slot to {1}</string>
 		<string name="ozip_decrypt_decryption">Starting Ozip Decryption...</string>
 		<string name="ozip_decrypt_finish">Ozip Decryption Finished!</string>
+		<string name="unmount_sys_install">Unmount System before installing a ZIP</string>
+		<string name="unmount_system">Unmounting System...</string>
+		<string name="unmount_system_err">Failed unmounting System</string>
 	</resources>
 </language>
